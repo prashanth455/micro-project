@@ -114,18 +114,10 @@
   .cart-page {
     padding: 32px 20px;
   }
-
-  .product-card {
-    flex-basis: calc((100% - 22px) / 2);
-  }
 }
 
 @media (max-width: 540px) {
   .cart-page {
     padding: 28px 14px;
-  }
-
-  .product-card {
-    flex-basis: 100%;
   }
 }
