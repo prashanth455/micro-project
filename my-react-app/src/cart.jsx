@@ -29,7 +29,7 @@ function Cart() {
               {product.icon}
             </div>
             <h2>{product.name}</h2>
-            <p className="product-price">${product.price.toFixed(2)}</p>
+            <p className="product-price">₹{product.price.toFixed(2)}</p>
             <button
               className="add-to-cart"
               type="button"
