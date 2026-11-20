@@ -16,7 +16,10 @@ function Cart() {
   return (
     <main className="cart-page">
       <header className="cart-heading">
-        <h1>Products</h1>
+        <div>
+          <p className="store-name">TechCart</p>
+          <h1>Products</h1>
+        </div>
         <p className="cart-count" aria-live="polite">
           Cart: {cartCount}
         </p>

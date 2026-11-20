@@ -23,6 +23,15 @@
   letter-spacing: normal;
 }
 
+.store-name {
+  margin: 0 0 4px;
+  color: #4058d6;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .cart-count {
   margin: 0;
   padding: 10px 16px;
