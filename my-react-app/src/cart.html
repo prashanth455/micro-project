@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #f4f6fb;
+        color: #172033;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      main {
+        width: min(1100px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 48px 0;
+      }
+
+      .heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 5vw, 2.6rem);
+      }
+
+      .cart-count {
+        margin: 0;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: #e8edff;
+        color: #354fc5;
+        font-weight: 700;
+      }
+
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 22px;
+      }
+
+      .product-card {
+        display: flex;
+        flex: 1 1 calc((100% - 44px) / 3);
+        min-width: 240px;
+        flex-direction: column;
+        padding: 22px;
+        border: 1px solid #e6e9f0;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 8px 24px rgb(23 32 51 / 6%);
+      }
+
+      .product-image {
+        display: grid;
+        min-height: 150px;
+        margin-bottom: 18px;
+        place-items: center;
+        border-radius: 12px;
+        background: #f4f6fb;
+        font-size: 4.5rem;
+      }
+
+      .product-card h2 {
+        margin: 0 0 8px;
+        font-size: 1.2rem;
+      }
+
+      .price {
+        margin: 0 0 20px;
+        color: #566176;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      button {
+        width: 100%;
+        margin-top: auto;
+        padding: 12px 16px;
+        border: 0;
+        border-radius: 9px;
+        background: #4058d6;
+        color: #fff;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 700;
+        transition: background 150ms ease, transform 150ms ease;
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+        background: #3047bd;
+      }
+
+      button:focus-visible {
+        outline: 3px solid #aebaff;
+        outline-offset: 3px;
+      }
+
+      @media (max-width: 600px) {
+        main {
+          width: min(100% - 28px, 420px);
+          padding: 32px 0;
+        }
+
+        .product-card {
+          flex-basis: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="heading">
+        <h1>Products</h1>
+        <p class="cart-count" aria-live="polite">Cart: <span id="cart-count">0</span></p>
+      </header>
+
+      <section class="products" aria-label="Available products">
+        <article class="product-card">
+          <div class="product-image" aria-hidden="true">💻</div>
+          <h2>Laptop</h2>
+          <p class="price">$899.00</p>
+          <button type="button">Add to Cart</button>
+        </article>
+        <article class="product-card">
+          <div class="product-image" aria-hidden="true">🖱️</div>
+          <h2>Mouse</h2>
+          <p class="price">$24.99</p>
+          <button type="button">Add to Cart</button>
+        </article>
+        <article class="product-card">
+          <div class="product-image" aria-hidden="true">⌨️</div>
+          <h2>Keyboard</h2>
+          <p class="price">$59.99</p>
+          <button type="button">Add to Cart</button>
+        </article>
+        <article class="product-card">
+          <div class="product-image" aria-hidden="true">🖥️</div>
+          <h2>Monitor</h2>
+          <p class="price">$229.00</p>
+          <button type="button">Add to Cart</button>
+        </article>
+        <article class="product-card">
+          <div class="product-image" aria-hidden="true">🎧</div>
+          <h2>Headphones</h2>
+          <p class="price">$79.99</p>
+          <button type="button">Add to Cart</button>
+        </article>
+        <article class="product-card">
+          <div class="product-image" aria-hidden="true">📷</div>
+          <h2>Webcam</h2>
+          <p class="price">$49.99</p>
+          <button type="button">Add to Cart</button>
+        </article>
+      </section>
+    </main>
+    <script>
+      const cartCount = document.querySelector("#cart-count");
+      let itemCount = 0;
+
+      document.querySelectorAll(".product-card button").forEach((button) => {
+        button.addEventListener("click", () => {
+          itemCount += 1;
+          cartCount.textContent = itemCount;
+        });
+      });
+    </script>
+  </body>
+</html>
